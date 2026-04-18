@@ -1,0 +1,43 @@
+---
+import Nav from '../components/ui/Nav.astro';
+import Footer from '../components/ui/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const { title, description, ogTitle, ogDescription } = Astro.props;
+const siteTitle = title === 'Jouler' ? 'Jouler' : `${title} — Jouler`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{siteTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle ?? siteTitle} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/assets/jouler-icon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Nav />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

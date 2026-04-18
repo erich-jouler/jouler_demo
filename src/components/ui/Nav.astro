@@ -1,0 +1,46 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/thermal-networks', label: 'Thermal Networks' },
+  { href: '/what-we-do', label: 'What We Do' },
+  { href: '/demo', label: 'Demo' },
+  { href: '/about', label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="w-full border-b border-[#E5E5E5] bg-[#F8F9FA]">
+  <nav class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 h-16 flex items-center justify-between gap-6">
+    <div class="shrink-0" aria-label="Jouler">
+      <img src="/assets/jouler-logo-diamond.svg" alt="Jouler" height="32" class="h-8 w-auto" />
+    </div>
+
+    <div class="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 md:gap-x-8">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`text-sm transition-colors ${
+            isActive(link.href)
+              ? 'text-[#0A0A0A] font-medium'
+              : 'text-[#525252] hover:text-[#0A0A0A]'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class={`text-sm border rounded px-3 py-1.5 transition-colors ${
+          currentPath === '/contact'
+            ? 'border-[#356B4F] text-[#356B4F]'
+            : 'border-[#E5E5E5] text-[#525252] hover:border-[#356B4F] hover:text-[#356B4F]'
+        }`}
+      >
+        Contact
+      </a>
+    </div>
+  </nav>
+</header>

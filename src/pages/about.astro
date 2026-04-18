@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Jouler is a small company working on a large problem. We believe thermal energy networks will be a foundational part of how communities decarbonize heating and cooling."
+>
+
+  <!-- Hero -->
+  <section class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 pt-24 pb-20">
+    <p class="text-xs font-medium tracking-widest uppercase text-[#356B4F] mb-6">About</p>
+    <h1 class="font-display text-5xl md:text-6xl font-light leading-[1.05] tracking-tight text-[#0A0A0A] max-w-2xl">
+      Jouler is a small company working on a large problem.
+    </h1>
+    <p class="mt-6 text-lg text-[#525252] max-w-2xl leading-relaxed">
+      We think thermal energy networks will be a meaningful part of how communities address heating and
+      cooling emissions, and that getting the data foundation right on the first generation of projects
+      matters for everything that comes after.
+    </p>
+  </section>
+
+  <!-- Founder -->
+  <section class="bg-[#EEF5F0]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 py-20">
+      <p class="text-xs font-medium tracking-widest uppercase text-[#356B4F] mb-10">Founder</p>
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+        <div class="shrink-0">
+          <img
+            src="/assets/headshot.jpg"
+            alt="Erich Ryan"
+            class="w-36 h-36 md:w-44 md:h-44 object-cover rounded-sm grayscale"
+          />
+        </div>
+        <div class="max-w-[560px]">
+          <p class="font-medium text-[#0A0A0A] mb-1">Erich Ryan</p>
+          <p class="text-sm text-[#356B4F] mb-6 font-mono">Founder, Jouler</p>
+          <div class="space-y-4 text-[#525252] leading-relaxed">
+            <p>
+              Erich Ryan founded Jouler in 2025 after spending years at the intersection of thermal
+              systems engineering, utility regulation, and energy software. His graduate research at
+              UMass Amherst focused on the techno-economics of district geothermal systems, with
+              published work on campus-scale applications. Before Jouler, he evaluated utility energy
+              efficiency programs for the California Public Utilities Commission and worked on
+              physics-based building models and digital twins at a startup at Greentown Labs, the
+              leading climatetech incubator. The through-line across that work was the same set of
+              questions Jouler now exists to answer.
+            </p>
+            <p>He's based in Massachusetts and works with partners across the US.</p>
+          </div>
+          <a
+            href="https://linkedin.com/in/erich-ryan"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-6 text-sm text-[#356B4F] hover:underline underline-offset-4"
+          >
+            Connect on LinkedIn →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="bg-[#F8F9FA]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 py-20">
+      <div class="grid md:grid-cols-[2fr_3fr] gap-12 lg:gap-24 items-start">
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-[#356B4F] mb-4">Why we exist</p>
+          <h2 class="font-display text-2xl md:text-3xl font-light leading-tight text-[#0A0A0A]">Mission</h2>
+        </div>
+        <div class="space-y-5 text-[#525252] leading-relaxed">
+          <p>
+            Jouler exists to help thermal energy networks reach the scale they need to make a real dent
+            in building emissions. We don't have a particular project to champion or a product to sell.
+            What we care about is whether TENs, as a category, become easier to evaluate, finance, and
+            operate over time.
+          </p>
+          <p>
+            In the near term, that means doing careful, honest work with the projects that are actually
+            being built. In the long run, it means the analytical and data groundwork done on those
+            early projects becomes useful to the many that follow.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-[#EEF5F0]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 py-20">
+      <div class="grid md:grid-cols-[2fr_3fr] gap-12 lg:gap-24 items-start">
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-[#356B4F] mb-4">How we operate</p>
+          <h2 class="font-display text-2xl md:text-3xl font-light leading-tight text-[#0A0A0A]">Values</h2>
+        </div>
+        <div class="space-y-10">
+          <div>
+            <p class="font-mono text-sm text-[#356B4F] mb-2">01</p>
+            <h3 class="font-medium text-[#0A0A0A] mb-2">Data drives building.</h3>
+            <p class="text-[#525252] leading-relaxed text-sm">
+              We're not a research group or a theory shop. The data and analytical work we do exists
+              to make TENs buildable, taking projects from promising idea to permitted, financed,
+              operating system.
+            </p>
+          </div>
+          <div>
+            <p class="font-mono text-sm text-[#356B4F] mb-2">02</p>
+            <h3 class="font-medium text-[#0A0A0A] mb-2">Honest about where the industry is.</h3>
+            <p class="text-[#525252] leading-relaxed text-sm">
+              The TEN sector is early. The economics are promising but haven't been proven at scale yet,
+              and we don't think pretending otherwise serves anyone well, including us.
+            </p>
+          </div>
+          <div>
+            <p class="font-mono text-sm text-[#356B4F] mb-2">03</p>
+            <h3 class="font-medium text-[#0A0A0A] mb-2">Open methodology.</h3>
+            <p class="text-[#525252] leading-relaxed text-sm">
+              The analytical approaches for evaluating TEN performance should be transparent and
+              reproducible. We publish what we can and contribute to open-source tooling. The value we
+              provide comes from doing the work well, not from keeping the methods opaque.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="bg-[#F7F2E9]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 py-16">
+      <p class="text-[#525252] leading-relaxed">
+        Questions, potential collaborations, or just want to talk about thermal networks:&nbsp;
+        <a href="mailto:erich@jouler.net" class="text-[#356B4F] hover:underline underline-offset-4 font-mono">
+          erich@jouler.net
+        </a>
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>

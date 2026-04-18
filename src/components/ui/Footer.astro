@@ -1,0 +1,36 @@
+---
+const footerLinks = [
+  { href: '/thermal-networks', label: 'Thermal Networks' },
+  { href: '/what-we-do', label: 'What We Do' },
+  { href: '/demo', label: 'Demo' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class="border-t border-[#E5E5E5] bg-[#F8F9FA]">
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-24 py-12">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+      <div class="flex flex-col gap-4">
+        <a href="/" aria-label="Jouler home">
+          <img src="/assets/jouler-icon.svg" alt="Jouler" height="36" class="h-9 w-auto" />
+        </a>
+        <a href="mailto:erich@jouler.net" class="text-sm text-[#525252] hover:text-[#356B4F] transition-colors font-mono">
+          erich@jouler.net
+        </a>
+      </div>
+
+      <nav class="flex flex-wrap gap-x-6 gap-y-2">
+        {footerLinks.map(link => (
+          <a href={link.href} class="text-sm text-[#525252] hover:text-[#0A0A0A] transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-[#E5E5E5]">
+      <p class="text-xs text-[#525252]">&copy; 2026 Jouler</p>
+    </div>
+  </div>
+</footer>
