@@ -18,7 +18,26 @@ const isActive = (href) =>
       <img src="/assets/jouler-logo-diamond.svg" alt="Jouler" height="32" class="h-8 w-auto" />
     </div>
 
-    <div class="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 md:gap-x-8">
+    <button
+      id="nav-toggle"
+      type="button"
+      class="md:hidden inline-flex items-center justify-center w-10 h-10 text-[#525252] hover:text-[#0A0A0A]"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+    >
+      <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg id="nav-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="hidden md:flex flex-wrap items-center justify-end gap-x-5 gap-y-2 md:gap-x-8">
       {navLinks.map(link => (
         <a
           href={link.href}
@@ -43,4 +62,46 @@ const isActive = (href) =>
       </a>
     </div>
   </nav>
+
+  <div id="nav-menu" class="hidden md:hidden border-t border-[#E5E5E5] bg-[#F8F9FA]">
+    <div class="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-3">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`text-base py-1 transition-colors ${
+            isActive(link.href)
+              ? 'text-[#0A0A0A] font-medium'
+              : 'text-[#525252] hover:text-[#0A0A0A]'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class={`text-base border rounded px-3 py-2 inline-block w-fit transition-colors ${
+          currentPath === '/contact'
+            ? 'border-[#356B4F] text-[#356B4F]'
+            : 'border-[#E5E5E5] text-[#525252] hover:border-[#356B4F] hover:text-[#356B4F]'
+        }`}
+      >
+        Contact
+      </a>
+    </div>
+  </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  const iconOpen = document.getElementById('nav-icon-open');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>
